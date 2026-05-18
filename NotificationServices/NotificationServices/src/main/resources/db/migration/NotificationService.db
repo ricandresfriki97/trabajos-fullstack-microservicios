@@ -1,0 +1,5 @@
+create table notification_service (id BIGINT AUTO_INCREMENT PRIMARY KEY, message VARCHAR(255));
+
+
+
+create table notification_service_user (id BIGINT AUTO_INCREMENT PRIMARY KEY, user_id BIGINT, notification_service_id BIGINT, FOREIGN KEY (notification_service_id) REFERENCES notification_service(id));

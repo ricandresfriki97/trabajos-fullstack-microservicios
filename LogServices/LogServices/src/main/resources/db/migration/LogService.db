@@ -1,0 +1,17 @@
+create table logs (
+    id bigint not null auto_increment,
+    timestamp datetime not null,
+    level varchar(10) not null,
+    message text not null,
+    exception text,
+    primary key (id)
+);
+
+create table log_metadata (
+    id bigint not null auto_increment,
+    log_id bigint not null,
+    key varchar(255) not null,
+    value text not null,
+    primary key (id),
+    foreign key (log_id) references logs(id) on delete cascade
+);

@@ -1,0 +1,18 @@
+create table RentalService (
+    id int primary key auto_increment,
+    name varchar(255) not null,
+    description text,
+    price decimal(10, 2) not null,
+    available boolean not null default true
+);
+
+
+create table RentalServiceBooking (
+    id int primary key auto_increment,
+    rental_service_id int not null,
+    customer_name varchar(255) not null,
+    booking_date date not null,
+    return_date date not null,
+    total_price decimal(10, 2) not null,
+    foreign key (rental_service_id) references RentalService(id)
+);

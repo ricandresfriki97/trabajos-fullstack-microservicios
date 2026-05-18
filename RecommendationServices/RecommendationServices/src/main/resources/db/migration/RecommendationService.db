@@ -1,0 +1,17 @@
+create table recommendation_service (
+    id varchar(255) not null primary key,
+    user_id varchar(255) not null,
+    product_id varchar(255) not null,
+    recommendation_score double not null,
+    created_at timestamp not null default current_timestamp
+);
+
+
+
+create table user_preferences (
+    id varchar(255) not null primary key,
+    user_id varchar(255) not null,
+    preference_key varchar(255) not null,
+    preference_value varchar(255) not null,
+    created_at timestamp not null default current_timestamp
+);

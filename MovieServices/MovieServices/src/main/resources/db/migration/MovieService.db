@@ -1,0 +1,6 @@
+create table movies (id INTEGER PRIMARY KEY, title TEXT, year INTEGER);
+
+
+
+
+create table ratings (id INTEGER PRIMARY KEY, movie_id INTEGER, rating INTEGER, FOREIGN KEY(movie_id) REFERENCES movies(id));
